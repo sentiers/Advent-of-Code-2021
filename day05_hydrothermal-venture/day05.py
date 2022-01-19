@@ -1,4 +1,4 @@
-import numpy as numpy
+import numpy as np
 
 def add_lines(diagram, data):
     for line in data:
@@ -36,7 +36,7 @@ def calc():
             cols = max([int(x1), int(x2), cols]) # find the max row and col
             rows = max([int(y1), int(y2), rows])
             data.append([(int(x1), int(y1)), (int(x2), int(y2))])
-    diagram = numpy.zeros((rows + 1, cols + 1))
+    diagram = np.zeros((rows + 1, cols + 1))
     # At how many points do at least two lines overlap?
     print('overlap: {} points'.format((add_lines(diagram, data) >= 2).sum()))    
     print('overlap(+d): {} points'.format((add_d_lines(diagram, data) >= 2).sum()))   
